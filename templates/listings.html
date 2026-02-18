@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="nav">
+    <div>Real Estate & Construction Portal</div>
+    <div>
+        <a href="/client_dashboard">Client</a>
+        <a href="/builder_dashboard">Builder</a>
+        <a href="/listings">Listings</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+<h1>Property Listings</h1>
+
+<!-- 🏠 PROPERTIES FOR SALE -->
+<h2>🏠 Properties for Sale</h2>
+{% for c in sell %}
+<div class="card">
+    <b>Posted by:</b> {{c.user}} <br>
+    <b>Zone:</b> {{c.zone}} <br>
+    <b>Plot Size:</b> {{c.plot_size}} <br>
+    <b>Estimate Price:</b> <span class="highlight">{{c.estimate}}</span> <br><br>
+
+    <b>Top Builders in this Zone:</b><br>
+    {% for b in builders %}
+        {% if b.zone == c.zone %}
+            <div class="inner-card">
+                Builder: {{b.user}} ⭐ {{ get_rating(b.user) }}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+
+<!-- 🏘️ PROPERTIES FOR RENT -->
+<h2>🏘️ Properties for Rent</h2>
+{% for c in rent %}
+<div class="card">
+    <b>Posted by:</b> {{c.user}} <br>
+    <b>Zone:</b> {{c.zone}} <br>
+    <b>Plot Size:</b> {{c.plot_size}} <br>
+    <b>Estimated Rent:</b> <span class="highlight">{{c.estimate}}</span> <br><br>
+
+    <b>Top Builders in this Zone:</b><br>
+    {% for b in builders %}
+        {% if b.zone == c.zone %}
+            <div class="inner-card">
+                Builder: {{b.user}} ⭐ {{ get_rating(b.user) }}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+
+<!-- 🧱 CONSTRUCTION REQUIREMENTS -->
+<h2>🧱 Construction Requirements</h2>
+{% for c in construction %}
+<div class="card">
+    <b>Posted by:</b> {{c.user}} <br>
+    <b>Zone:</b> {{c.zone}} <br>
+    <b>Plot Size:</b> {{c.plot_size}} <br>
+    <b>Floors:</b> {{c.floors}} <br>
+    <b>Purpose:</b> {{c.purpose}} <br>
+    <b>Estimated Cost:</b> <span class="highlight">{{c.estimate}}</span> <br><br>
+
+    <b>Top Builders in this Zone:</b><br>
+    {% for b in builders %}
+        {% if b.zone == c.zone %}
+            <div class="inner-card">
+                Builder: {{b.user}} ⭐ {{ get_rating(b.user) }}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+<a href="/" class="btn">Back</a>
+
+</div>
+</body>
+</html>

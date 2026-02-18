@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <div>Real Estate & Construction Portal</div>
+        <div>
+            <a href="/client_dashboard">Client</a>
+            <a href="/builder_dashboard">Builder</a>
+            <a href="/listings">Listings</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+<div class="container">
+
+<h2>Client Dashboard</h2>
+
+<h3>Your Estimates</h3>
+{% for c in clients %}
+    <div class="card">
+        <p>
+            <b>Role:</b> {{c.role}} <br>
+            <b>Estimate:</b> <span class="highlight">{{c.estimate}}</span>
+        </p>
+    </div>
+{% endfor %}
+
+<h3>Builders Used For Your Estimate</h3>
+{% for b in builders %}
+    <div class="card">
+        <p>
+            <b>Builder:</b> {{ b.user }}
+        </p>
+
+        <form action="/rate_builder" method="POST">
+            <input type="hidden" name="builder_user" value="{{ b.user }}">
+            <button type="submit">Rate this Builder</button>
+        </form>
+    </div>
+{% endfor %}
+
+<a href="/logout" class="btn">Logout</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="nav">
+    <div>Real Estate & Construction Portal</div>
+    <div>
+        <a href="/client_dashboard">Client</a>
+        <a href="/builder_dashboard">Builder</a>
+        <a href="/listings">Listings</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+<h2>Builder Registration</h2>
+
+<form action="/submit_builder" method="post" enctype="multipart/form-data">
+
+<div class="card">
+    <h3>Zone</h3>
+    <select name="zone">
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+        <option value="central">Central</option>
+        <option value="outskirts">Outskirts</option>
+    </select>
+</div>
+
+<div class="card">
+    <h3>Basic Details</h3>
+    Name: <input name="name">
+    Firm Name: <input name="firm">
+    GST: <input name="gst">
+    Experience: <input name="experience">
+</div>
+
+<div class="card">
+    <h3>Material Prices</h3>
+    Brick Price (1000): <input name="brick_price">
+    Cement (bag): <input name="cement_price">
+    Sand (ton): <input name="sand_price">
+    Steel (kg): <input name="steel_price">
+</div>
+
+<div class="card">
+    <h3>Rates</h3>
+    Labor Cost (sqft): <input name="labor_cost">
+    Construction Rate (sqft): <input name="construction_rate">
+    Plot Rate (sqft): <input name="plot_rate">
+</div>
+
+<div class="card">
+    <h3>Construction Cost (per sq ft per floor)</h3>
+    Basic (Rental): <input name="basic_rate">
+    Standard (Normal House): <input name="standard_rate">
+    Premium: <input name="premium_rate">
+    Luxury: <input name="luxury_rate">
+    Only Structure Cost (per sq ft): <input name="structure_rate">
+</div>
+
+<div class="card">
+    <h3>Verification</h3>
+    Profile Photo: <input type="file" name="profile">
+    Aadhaar: <input type="file" name="aadhaar">
+</div>
+
+<button>Submit</button>
+</form>
+
+</div>
+</body>
+</html>

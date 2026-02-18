@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+    margin-top:0;
+    color:#2c3e50;
+}
+
+.card{
+    border:1px solid #e0e0e0;
+    padding:20px;
+    border-radius:8px;
+    margin-bottom:20px;
+    background:#fafafa;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#2c3e50;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background:#34495e;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.nav {
+    background: #222;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* ===== Extra UI polish (additions only) ===== */
+
+h3{
+    color:#34495e;
+    margin-top:30px;
+}
+
+p{
+    line-height:1.6;
+    color:#444;
+}
+
+/* cards inside cards (reviews etc.) */
+.inner-card{
+    background:#ffffff;
+    border-left:4px solid #2c3e50;
+    padding:12px 15px;
+    margin-top:10px;
+    border-radius:6px;
+}
+
+/* better spacing for nav links */
+.nav div a{
+    padding:8px 12px;
+    border-radius:4px;
+}
+
+.nav div a:hover{
+    background:#444;
+}
+
+/* form button look */
+button{
+    padding:10px 18px;
+    background:#2c3e50;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#34495e;
+}
+
+/* highlight estimate values */
+.highlight{
+    font-weight:bold;
+    color:#27ae60;
+    font-size:18px;
+}
+
+/* responsive */
+@media (max-width:768px){
+    .container{
+        width:95%;
+        padding:20px;
+    }
+}

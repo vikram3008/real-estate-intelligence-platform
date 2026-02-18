@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="nav">
+    <div>Real Estate & Construction Portal</div>
+    <div>
+        <a href="/client_dashboard">Client</a>
+        <a href="/builder_dashboard">Builder</a>
+        <a href="/listings">Listings</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+<h2>Client Form - {{role}}</h2>
+
+<form action="/submit_client" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="role" value="{{role}}">
+
+    <div class="card">
+        <h3>Basic Details</h3>
+        Name: <input name="name">
+        Plot Address: <input name="plot_address">
+        Plot Size / Area: <input name="plot_size">
+        Requirements: <input name="requirements">
+        Budget: <input name="budget">
+    </div>
+
+    <div class="card">
+        <h3>Construction Preferences</h3>
+        Purpose:
+        <select name="purpose">
+            <option value="basic">Basic (Rental)</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="luxury">Luxury</option>
+        </select>
+
+        Floors: <input name="floors">
+
+        Only Structure Required?
+        <select name="only_structure">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h3>Location Details</h3>
+        Zone of Property:
+        <select name="zone">
+            <option value="north">North</option>
+            <option value="south">South</option>
+            <option value="east">East</option>
+            <option value="west">West</option>
+            <option value="central">Central</option>
+            <option value="outskirts">Outskirts</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h3>Verification</h3>
+        Aadhaar: <input type="file" name="aadhaar">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

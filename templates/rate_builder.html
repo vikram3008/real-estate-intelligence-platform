@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="nav">
+    <div>Real Estate & Construction Portal</div>
+    <div>
+        <a href="/client_dashboard">Back to Dashboard</a>
+    </div>
+</div>
+
+<div class="container">
+
+<h2>Rate Builder</h2>
+
+<div class="card">
+    <form action="/submit_review" method="POST">
+        <input type="hidden" name="builder_user" value="{{ builder }}">
+
+        Rating (1-5):
+        <input type="number" name="rating" min="1" max="5">
+
+        Review:
+        <textarea name="review" rows="5"></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+
+</div>
+</body>
+</html>

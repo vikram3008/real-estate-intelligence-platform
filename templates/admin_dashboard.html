@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Admin Dashboard</h2>
+
+<h3>Users</h3>
+{% for u in users %}
+<div class="card">
+    Username: {{u.username}} <br>
+    Role: {{u.role}}
+</div>
+{% endfor %}
+
+<h3>Clients</h3>
+{% for c in clients %}
+<div class="card">
+    User: {{c.user}} <br>
+    Role: {{c.role}} <br>
+    Status: {{c.status}}
+    <br><br>
+    <a href="{{ url_for('approve_client', id=c.id) }}">Approve</a>
+    |
+    <a href="{{ url_for('reject_client', id=c.id) }}">Reject</a>
+</div>
+{% endfor %}
+
+<h3>Builders</h3>
+{% for b in builders %}
+<div class="card">
+    User: {{b.user}} <br>
+    Zone: {{b.zone}} <br>
+    Status: {{b.status}}
+    <br><br>
+    <a href="{{ url_for('approve_builder', id=b.id) }}">Approve</a>
+    |
+    <a href="{{ url_for('reject_builder', id=b.id) }}">Reject</a>
+</div>
+{% endfor %}
+
+</div>
+</body>
+</html>

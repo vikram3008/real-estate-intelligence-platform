@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate & Construction Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="nav">
+        <div>Real Estate & Construction Portal</div>
+        <div>
+            <a href="/client_dashboard">Client</a>
+            <a href="/builder_dashboard">Builder</a>
+            <a href="/listings">Listings</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Builder Dashboard</h2>
+        <h3>Average Rating: {{ avg }}</h3>
+        <h3>Trust Score: {{ trust_score }}</h3>
+
+        <!-- ⭐ Builder Rating Section -->
+        <div class="card">
+            <h3>Average Rating: {{ avg }}</h3>
+
+            {% for r in reviews %}
+                <div class="inner-card">
+                    <p><b>{{ r.client }}</b> rated {{ r.rating }}/5</p>
+                    <p>{{ r.review }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h3>All Client Requirements in Your Zone</h3>
+
+        {% for c in clients %}
+            <div class="card">
+                <p><b>Name:</b> {{c.name}}</p>
+                <p><b>Role:</b> {{c.role}}</p>
+                <p><b>Zone:</b> {{c.zone}}</p>
+                <p><b>Estimate:</b> {{c.estimate}}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

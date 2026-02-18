@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Builders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h2>🏆 Top Builders</h2>
+
+{% for item in builders %}
+<div class="card">
+    <h3>{{ loop.index }}. {{ item.builder.name }}</h3>
+    Zone: {{ item.builder.zone }} <br>
+    Trust Score: {{ item.trust_score }}
+</div>
+{% endfor %}
+
+</div>
+
+</body>
+</html>
