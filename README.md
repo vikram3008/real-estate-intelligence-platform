@@ -1,67 +1,24 @@
-# 🏗 Real Estate & Construction Intelligence Platform
+# Real Estate & Construction Intelligence Platform
 
-A role-based construction marketplace built using Flask.
+## Overview
+A smart platform connecting clients and builders with transparent pricing, ratings, and premium analytics.
 
-This platform connects Clients and Builders with:
-- Admin Moderation
-- Trust Score Engine
-- Zone-Based Matching
-- Leaderboard Ranking System
+## Features
+- Builder dashboard
+- Client reviews & rating system
+- Premium subscription (30 days validity)
+- QR-based payment integration
+- JSON-based lightweight database
+- Flask backend
 
----
-
-## 🚀 Features
-
-### 🔐 Role-Based Authentication
-- Admin
-- Builder
-- Client
-
-### 🛠 Builder Module
-- Register construction details
-- Set pricing
-- Upload documents
-- View zone-based clients
-- Trust score calculation
-
-### 🏠 Client Module
-- Submit construction requirements
-- Get matched with builders in same zone
-- Rate & review builders
-
-### 🛡 Admin Panel
-- Approve / Reject builders
-- Approve / Reject clients
-- Marketplace moderation
-
-### 🏆 Builder Leaderboard
-- Ranked by trust score
-- Performance-based ranking
-
----
-
-## 🧠 Trust Score Algorithm
-
-Trust Score is calculated using:
-
-- Rating (40%)
-- Quality (25%)
-- Communication (20%)
-- On-time completion (15%)
-
----
-
-## 🛠 Tech Stack
-
-- Python
-- Flask
-- HTML/CSS
+## Tech Stack
+- Python (Flask)
+- HTML, CSS
 - JSON (Database)
-- UUID-based Routing
+- Git & GitHub
 
----
-
-## 📦 Installation
-
-1. Clone repository:
-
+## Future Vision
+- Multi-city construction intelligence engine
+- AI-based cost estimation
+- Trust score system
+- Blockchain-based digital property registry prototype
